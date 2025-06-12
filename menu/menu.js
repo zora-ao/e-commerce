@@ -10,7 +10,7 @@ export const displayProducts = (containerId, category) => {
     filterProducts.forEach((item) => {
         container.innerHTML += `<div class="group">
         <div class="bg-[#B2CD9C] md:h-[150px] h-[100px] md:w-[180px] overflow-hidden shadow-lg flex flex-col items-center rounded mb-3">
-            <img class="md:w-[130px] md:h-[130px] w-[100px] h-[100px] my-auto group-hover:scale-125 ease duration-300" src="/${item.src}" alt="">
+            <img class="md:w-[130px] md:h-[130px] w-[100px] h-[100px] my-auto group-hover:scale-125 ease duration-300" src="../${item.src}" alt="">
         </div>
         <div class="flex justify-evenly w-full">
             <h1>Chocolate Cake</h1>
