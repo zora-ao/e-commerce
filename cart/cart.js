@@ -38,7 +38,7 @@ export const displayCartItems = () => {
         ordersContainer.innerHTML += 
         `<div class="flex justify-around items-center">
             <div class="flex items-center w-[300px]">
-                <img class="w-[100px] h-[120px]" src="/${product.src}" alt="${product.name}">
+                <img class="w-[100px] h-[120px]" src="../${product.src}" alt="${product.name}">
                 <div class="mx-2">
                     <h1 class="text-xl">${product.name}</h1>
                     <p>Price: $${product.price}</p>
