@@ -1,4 +1,4 @@
-import products from "/products.js";
+import products from "../products.js";
 import { addToCart } from "../cart/cart.js";
 import { cart } from "../cart/cart.js";
 const productCount = document.getElementById("product-count");
