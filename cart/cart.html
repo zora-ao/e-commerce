@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Great+Vibes&family=Lobster&family=Pacifico&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<!--Items Section-->
+    <section class="grid grid-cols-[1fr_auto] bg-[#CA7842]">
+    <div class="px-5 w-full h-screen">
+        <div class="grid grid-cols-[100px_auto] text-white">
+            <button><a href="/menu/menu.html"><i class="fa-solid fa-arrow-left mx-2"></i>Go Back</a></button>
+            <div class="flex align-center items-center my-3 justify-evenly">
+                <h1 class="text-2xl font-bold mx-10">Orders</h1>
+                <p id="cart-total-items">0 Items</p>
+            </div>
+            
+        </div>
+        
+        <!--Products Container-->
+        <div class="flex flex-col rounded gap-1 h-[500px] overflow-hidden bg-[#F0F2BD]">
+            <header class="py-3 bg-[#4B352A] text-white">
+                <ul class="grid text-center grid-cols-[auto_140px_140px_140px]">
+                    <li>Product Detail</li>
+                    <li>Quantity</li>
+                    <li>Price</li>
+                    <li>Total</li>
+                </ul>
+            </header>
+        <div id="orders" class="overflow-y-scroll scroll-smooth">
+        </div>
+        </div>
+    </div>
+    <!--Payment Section-->
+
+    <div class="bg-[#4B352A] text-[#F0F2BD] h-screen w-[400px] relative">
+        <h1 class="text-center md:text-2xl mb-5 mt-16">Order Summary</h1>
+        <hr class="w-3/4 border border-[#F0F2BD] mx-auto">
+        <div class="flex justify-between md:text-xl px-5 my-10">
+            <div class="flex flex-col gap-y-10 font-bold">
+                <h2>Sub total:</h2>
+                <h2>Shipping:</h2>
+                <h2>Tax:</h2>
+                <h2>Discount:</h2>
+                <h2>Total cost:</h2>
+            </div>
+            <div class="flex flex-col gap-y-10">
+                <h2 id="sub-total">$0.00</h2>
+                <h2 id="shipping">$0.00</h2>
+                <h2 id="tax">$0.00</h2>
+                <h2 id="discount">$0.00</h2>
+                <h2 id="total-cost">$0.00</h2>
+            </div>
+            
+        </div>
+        
+        <button class="bg-green-500 text-[#4B352A] w-full py-4 font-bold absolute bottom-0">Checkout</button>
+    </div>
+    </section>
+
+    <script type="module" src="cart.js"></script>
+</body>
+</html>

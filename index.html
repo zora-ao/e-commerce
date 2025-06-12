@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Great+Vibes&family=Lobster&family=Pacifico&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="w-full flex justify-evenly items-center py-2 md:fixed bg-white z-10">
+        <h1 class="text-2xl font-bold font-[Pacifico]">Logo</h1>
+        <ul class="md:flex justify-evenly hidden w-1/2 font-[Quicksand] font-bold">
+            <li><a href="#hero">Home</a></li> 
+            <li><a href="#about">About</a></li>
+            <li><a href="menu/menu.html">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul> 
+
+        <button class="border-2 px-2 py-1 rounded-full relative">
+        <a href="cart/cart.html">
+            <i  class="fa-solid fa-bag-shopping"></i>
+            <span id="cart-count" class="absolute bg-[#FADA7A] -top-2 left-4 rounded-full px-2">0</span>
+        </a>
+        </button>
+        <button><i class="fa-solid fa-right-to-bracket"></i></button>
+    </nav>
+<!--Hero Section-->
+    <section id="hero" class="h-screen flex bg-[#4B352A] flex-col md:flex-row justify-evenly items-center relative px-3 md:px-0">
+        <div class="md:w-1/2 text-white md:bg-transparent bg-white/10 backdrop-blur-md py-3 relative md:text-[#F0F2BD] md:py-16 md:px-5 px-3 rounded text-left z-10 md:z-0">
+            <h1 class="md:text-8xl text-4xl font-bold font-[Quicksand]">Baked to Perfection</h1>
+            <p class="mb-10">Crafted with love, baked to perfection — indulge in cakes that turn every moment into a celebration.</p>
+            <div>
+                <button class="border text-xl md:px-5 px-2 py-1 font-[Quicksand]">Contact Us</button>
+                <button class="border text-xl md:px-5 px-2 py-1 font-[Quicksand] md:mx-5 cursor-pointer">
+                    <a href="menu/menu.html">Shop Now<i class="fa-solid fa-arrow-right md:ml-3 ml-2"></i></a></button>
+            </div>
+            
+        </div>
+
+        <div class="h-full flex items-end justify-center md:relative absolute">
+            <img class="md:h-[550px] h-[550px]" src="hero-img.png" />
+        </div>
+    </section>
+<!--Delivery Section-->
+    <section class="md:h-[200px] font-[Quicksand] bg-white md:flex py-4 md:py-0 gap-x-5 justify-evenly items-center px-5 md:px-16">
+        <div class="flex items-center gap-x-5">
+            <i class="fas fa-shipping-fast border p-4 rounded-full bg-[#4B352A] text-[#F0F2BD]"></i>
+            <div>
+                <h1 class="font-bold md:text-3xl my-2">Faster Delivery</h1>
+                <p>Lorem impus dummpy text oka and not okay typing</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-x-5">
+            <i class="fas fa-box border p-4 rounded-full bg-[#4B352A] text-[#F0F2BD]"></i>
+            <div>
+                <h1 class="font-bold md:text-3xl my-2">Safe Packaging</h1>
+                <p class="font-[Quicksand]">Lorem impus dummpy text oka and not okay typing</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-x-5">
+            <i class="fas fa-bread-slice border p-4 rounded-full bg-[#4B352A] text-[#F0F2BD]"></i>
+            <div class="text-justify">
+                <h1 class="font-bold md:text-3xl my-2">Freshly Baked</h1>
+                <p class="font-[Quicksand]">Lorem impus dummpy text oka and not okay typing</p>
+            </div>
+        </div>
+    </section>
+<!--Products Section-->
+    <section class="h-full bg-[#F0F2BD] pt-10 pb-20">
+        <div class="flex items-center justify-around my-10 px-10">
+            <p class="text-4xl font-bold font-[Lobster]">Special Baked Products</p>
+            <button class="md:px-5 w-[200px] py-1 border border-2 ease-in-out duration-300 hover:translate-x-[30px] border-black font-[Quicksand]">
+                <a href="menu/menu.html">View All</a>
+            <i class="fa-solid fa-arrow-right ml-3"></i></button>
+        </div>
+
+        <div id="products-container" class="flex flex-wrap overflow-hidden gap-5 md:px-10 justify-center items-center">
+        </div>  
+    </section>
+
+    <!--Discount section-->
+    <section id="about" class="items-center relative justify-center flex md:flex-row justify-evenly bg-[#CA7842] md:py-0 py-5">
+        <div class="border md:border-none border-black md:relative absolute top-0 h-full md:w-[300px] w-full">
+            <img class="md:h-[250px] w-[300px] h-full mx-auto rounded" src="discount.png" />
+        </div>
+        <div class="gap-y-3 py-10 text-center md:z-0 z-10 md:bg-transparent bg-white/20 backdrop-blur-sm px-3 md:px-0">
+            <h1 class="md:text-5xl text-xl font-bold">What are you waiting for?</h1>
+            <p class="font-[Quicksand] md:text-xl text-sm mb-10 mt-3">Treat your self with our lovely cakes!</p>
+            <button class="bg-white py-2 px-5 font-[Amatic] rounded m-auto text-center">Order Now</button>
+        </div>
+    </section>
+<!--Footer Section-->
+    <section id="contact" class="bg-[#4B352A] px-5 text-white flex md:flex-row flex-col justify-evenly items-center py-10 md:h-screen">
+        <div class="flex flex-col justify-evenly gap-y-20">
+        <!--Contact-->
+        <div>
+            <h1 class="text-4xl font-[Quicksand]">Get in touch.</h1>
+            <div class="flex flex-col mt-5 gap-y-1 text-lg font-[Quicksand]">
+                <p><strong>Phone:</strong> 0917 123 4567</p>
+                <p><strong>Email:</strong> hello@sweetcravings.com</p>
+                <p><strong>Location:</strong> 123 Cupcake Street, Pasig City, Metro Manila</p>
+            </div>
+        </div>
+        <!--Follow Us-->
+        <div>
+            <h1 class="md:text-4xl font-[Quicksand]">Follow Us!</h1>
+            <ul class="flex justify-evenly my-5 text-2xl">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+            <p>Share with us your sweetest experienced!</p>
+        </div>
+        </div>
+        
+
+    <div class="backdrop-blur-md">
+        <form class="flex flex-col border-2 py-8 px-5 md:w-[400px] w-[300px] h-[450px]" >
+            <h2 class="md:text-4xl font-[Quicksand] text-center mb-4">Say SWEEEETT!!!</h2>
+            <label for="name">Name:</label>
+            <input class="rounded my-2 px-2 text-[#4B352A]" type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input class="rounded my-2 px-2 text-[#4B352A]" type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea class="rounded my-2 px-2 text-[#4B352A]" id="message" name="message" rows="4" required></textarea>
+
+            <button class="mt-4 border rounded py-1 bg-[#F0F2BD] text-black" type="submit">Send</button>
+        </form> 
+    </div>
+        
+</section>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
