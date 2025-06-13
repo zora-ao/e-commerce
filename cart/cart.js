@@ -5,6 +5,10 @@ const shipping = document.getElementById("shipping");
 const tax = document.getElementById("tax");
 const discount = document.getElementById("discount");
 const totalCost = document.getElementById("total-cost");
+const mobileCheckoutBtn = document.getElementById("mobile-checkout");
+const mobileCheckoutAll = document.getElementById("mobile-checkout-all");
+const mobilePaymentBackBtn = document.getElementById("mobile-payment-back");
+const mobilePayment = document.getElementById("mobile-payment");
 export let cart = JSON.parse(localStorage.getItem("products")) || [];
 
 if (!Array.isArray(cart)) cart = [];
@@ -13,10 +17,10 @@ export const addToCart = (item, notification) => {
     const find = cart.find((i) => i.id === item.id);
     if(find){
         find.quantity += 1;
-        notification.innerHTML = `<i class="fa-solid fa-check"></i> Item already in cart. Quantity increased.`;
+        notification.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.`;
     } else {
         cart.push({...item, quantity: 1});
-        notification.innerHTML = `<i class="fa-solid fa-check"></i> Item added to cart.`;
+        notification.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item added to cart.`;
     }
     notification.classList.remove("hidden");
     setTimeout(() => {
@@ -36,22 +40,23 @@ export const displayCartItems = () => {
     cart.forEach((product) => {
         totalItems.innerHTML = `${cart.length} Items`;
         ordersContainer.innerHTML += 
-        `<div class="flex justify-around items-center">
-            <div class="flex items-center w-[300px]">
-                <img class="w-[100px] h-[120px]" src="../${product.src}" alt="${product.name}">
+        `<div class="flex justify-around items-center my-5">
+            <div class="flex md:flex-row items-center md:w-[300px]">
+                <img class="md:w-[100px] border border-black w-[50px] h-[50px] md:h-[120px]" src="../${product.src}" alt="${product.name}">
                 <div class="mx-2">
-                    <h1 class="text-xl">${product.name}</h1>
+                    <h1 class="md:text-xl text-lg">${product.name}</h1>
                     <p>Price: $${product.price}</p>
-                    <button data-id="${product.id}" class="delete-btn font-6xl">Remove</button>
+                    <button data-id="${product.id}" class="delete-btn text-sm">Remove</button>
                 </div>
             </div>
-            <div class="flex justify-center gap-x-2 my-2">
-                <button data-id="${product.id}" class="increase-btn"><i class="fa-solid fa-plus"></i></button>
-                <input class="w-[30px] rounded text-center text-black" type="any" value="${product.quantity || 1}">
-                <button data-id="${product.id}" class="decrease-btn"><i class="fa-solid fa-minus"></i></button>
+            <div class="flex justify-between md:flex-row flex-col md:w-[300px] items-center">
+                <div class="flex justify-center gap-x-2 my-2">
+                    <button data-id="${product.id}" class="increase-btn"><i class="fa-solid fa-plus"></i></button>
+                    <input class="w-[30px] rounded text-center text-black" type="any" value="${product.quantity || 1}">
+                    <button data-id="${product.id}" class="decrease-btn"><i class="fa-solid fa-minus"></i></button>
+                </div>
+                <p class="text-sm"><span class="md:hidden">Total:</span> $${product.price * product.quantity}</p>
             </div>
-            <p>$599</p>
-            <p>$${product.price * product.quantity}</p>
         </div>`;
         updateOrderSummary();
     });
@@ -114,6 +119,16 @@ let shippingCost = 5;
 const updateOrderSummary = () => {
     subTotal.innerHTML = `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}`
 }
+
+mobileCheckoutBtn.addEventListener("click", () => {
+    mobileCheckoutAll.classList.add("hidden");
+    mobilePayment.classList.remove("hidden");
+});
+
+mobilePaymentBackBtn.addEventListener("click", () => {
+    mobileCheckoutAll.classList.remove("hidden");
+    mobilePayment.classList.add("hidden");
+});
 
 
 displayCartItems();

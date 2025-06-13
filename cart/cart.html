@@ -13,8 +13,8 @@
 </head>
 <body>
 <!--Items Section-->
-    <section class="grid grid-cols-[1fr_auto] bg-[#CA7842]">
-    <div class="px-5 w-full h-screen">
+    <section class="flex flex-col md:flex-row md:flex-row bg-[#CA7842]">
+    <div class="md:px-5 px-2 w-full h-screen">
         <div class="grid grid-cols-[100px_auto] text-white">
             <button><a href="../menu/menu.html"><i class="fa-solid fa-arrow-left mx-2"></i>Go Back</a></button>
             <div class="flex align-center items-center my-3 justify-evenly">
@@ -25,23 +25,28 @@
         </div>
         
         <!--Products Container-->
-        <div class="flex flex-col rounded gap-1 h-[500px] overflow-hidden bg-[#F0F2BD]">
-            <header class="py-3 bg-[#4B352A] text-white">
-                <ul class="grid text-center grid-cols-[auto_140px_140px_140px]">
+        <div id="mobile-checkout-all" class="flex flex-col rounded gap-1 h-3/4 md:h-[500px] h-[85%] overflow-hidden bg-[#F0F2BD]">
+            <header class="py-3 bg-[#4B352A] text-white hidden md:block">
+                <ul class="grid w-full text-center items-center grid-cols-[1fr_100px_100px] md:grid-cols-[1fr_230px_230px]">
                     <li>Product Detail</li>
                     <li>Quantity</li>
-                    <li>Price</li>
                     <li>Total</li>
                 </ul>
             </header>
-        <div id="orders" class="overflow-y-scroll scroll-smooth">
+        <div id="orders" class="overflow-y-scroll scroll-smooth px-2">
         </div>
-        </div>
+        <!--For Mobile view-->
+        <section class="flex justify-evenly items-center md:hidden bg-[#4B352A] text-white py-5">
+            <button id="mobile-checkout">Checkout</button>
+            <p>Sub total: <span id="mobile-sub-total">$0.00</span></p>
+        </section>
+    </div> 
     </div>
     <!--Payment Section-->
 
-    <div class="bg-[#4B352A] text-[#F0F2BD] h-screen w-[400px] relative">
-        <h1 class="text-center md:text-2xl mb-5 mt-16">Order Summary</h1>
+    <div id="mobile-payment" class="bg-[#4B352A] hidden text-[#F0F2BD] md:block h-screen w-screen md:w-[400px] absolute md:relative">
+        <button id="mobile-payment-back">Go back</button>
+        <h1 class="text-center md:text-2xl mb-5 md:mt-16">Order Summary</h1>
         <hr class="w-3/4 border border-[#F0F2BD] mx-auto">
         <div class="flex justify-between md:text-xl px-5 my-10">
             <div class="flex flex-col gap-y-10 font-bold">
