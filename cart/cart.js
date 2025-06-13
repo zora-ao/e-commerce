@@ -11,6 +11,7 @@ const mobilePaymentBackBtn = document.getElementById("mobile-payment-back");
 const mobilePayment = document.getElementById("mobile-payment");
 export let cart = JSON.parse(localStorage.getItem("products")) || [];
 
+
 if (!Array.isArray(cart)) cart = [];
 
 export const addToCart = (item, notification) => {
@@ -120,15 +121,7 @@ const updateOrderSummary = () => {
     subTotal.innerHTML = `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}`
 }
 
-mobileCheckoutBtn.addEventListener("click", () => {
-    mobileCheckoutAll.classList.add("hidden");
-    mobilePayment.classList.remove("hidden");
-});
 
-mobilePaymentBackBtn.addEventListener("click", () => {
-    mobileCheckoutAll.classList.remove("hidden");
-    mobilePayment.classList.add("hidden");
-});
 
 
 displayCartItems();

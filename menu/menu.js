@@ -40,5 +40,9 @@ allProductsCon.addEventListener('click', (e) => {
     };
 });
 
-
-
+const menuBtn = document.getElementById("menu-btn");
+const mobileNav = document.getElementById("mobile-nav");
+menuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle("-translate-x-full");
+    menuBtn.innerHTML = mobileNav.classList.contains("-translate-x-full") ? `<i class="fa-solid fa-bars"></i>` : `<i class="fa-solid fa-xmark"></i>`;
+});
