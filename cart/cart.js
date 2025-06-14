@@ -5,10 +5,7 @@ const shipping = document.getElementById("shipping");
 const tax = document.getElementById("tax");
 const discount = document.getElementById("discount");
 const totalCost = document.getElementById("total-cost");
-const mobileCheckoutBtn = document.getElementById("mobile-checkout");
-const mobileCheckoutAll = document.getElementById("mobile-checkout-all");
-const mobilePaymentBackBtn = document.getElementById("mobile-payment-back");
-const mobilePayment = document.getElementById("mobile-payment");
+const mobileSubTotal = document.getElementById("mobile-sub-total");
 export let cart = JSON.parse(localStorage.getItem("products")) || [];
 
 
@@ -16,16 +13,19 @@ if (!Array.isArray(cart)) cart = [];
 
 export const addToCart = (item, notification) => {
     const find = cart.find((i) => i.id === item.id);
+    const div = document.createElement("div");
+    div.className = "bg-[#CA7842] rounded-lg w-full text-center my-2 py-5";
     if(find){
         find.quantity += 1;
-        notification.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.`;
+        div.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.`;
+        notification.appendChild(div);
     } else {
         cart.push({...item, quantity: 1});
-        notification.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item added to cart.`;
+        div.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item added to cart.`;
+        notification.appendChild(div);
     }
-    notification.classList.remove("hidden");
     setTimeout(() => {
-        notification.classList.add("hidden");
+        notification.removeChild(div);
     }, 1000);
     localStorage.setItem("products", JSON.stringify(cart));
 };
@@ -33,7 +33,7 @@ export const addToCart = (item, notification) => {
 export const displayCartItems = () => {
     if(!ordersContainer) return;
     if(cart.length === 0){
-        ordersContainer.innerHTML = `<h1 class="text-3xl my-20 text-center">Your cart is empty.</h1>`;
+        ordersContainer.innerHTML = `<h1 class="md:text-3xl my-20 text-center">Your cart is empty.</h1>`;
         return;
     }
 
@@ -59,7 +59,23 @@ export const displayCartItems = () => {
                 <p class="text-sm"><span class="md:hidden">Total:</span> $${product.price * product.quantity}</p>
             </div>
         </div>`;
-        updateOrderSummary();
+
+    const mobileCheckoutBtn = document.getElementById("mobile-checkout");
+    const mobileCheckoutAll = document.getElementById("mobile-checkout-all");
+    const mobilePaymentBackBtn = document.getElementById("mobile-payment-back");
+    const mobilePayment = document.getElementById("mobile-payment-view");
+
+    mobilePaymentBackBtn.addEventListener('click', () => {
+        mobilePayment.classList.add("hidden");
+        mobileCheckoutAll.classList.remove("hidden");
+    });
+
+    mobileCheckoutBtn.addEventListener('click', () => {
+        mobilePayment.classList.remove("hidden");
+        mobileCheckoutAll.classList.add("hidden");
+    });
+    
+    updateOrderSummary();
     });
 
     const increaseBtn = document.querySelectorAll(".increase-btn");
@@ -110,6 +126,7 @@ const deleteItem = (id) => {
     localStorage.setItem("products", JSON.stringify(cart));
     totalItems.innerHTML = `${cart.length} Items`;
     displayCartItems();
+    updateOrderSummary();
     console.log("working")
 };
 
@@ -118,9 +135,9 @@ let shippingCost = 5;
 
 
 const updateOrderSummary = () => {
-    subTotal.innerHTML = `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}`
+    mobileSubTotal.innerHTML = cart.length !== 0 ? `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}` : `$0.00`;
+    subTotal.innerHTML = cart.length !== 0 ? `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}` : `$0.00`;
 }
-
 
 
 

@@ -12,23 +12,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav class="w-full flex justify-evenly items-center py-2 md:fixed bg-white z-10">
-        <h1 class="text-2xl font-bold font-[Pacifico]">Logo</h1>
-        <ul class="md:flex justify-evenly hidden w-1/2 font-[Quicksand] font-bold">
-            <li><a href="#hero">Home</a></li> 
-            <li><a href="#about">About</a></li>
-            <li><a href="menu/menu.html">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul> 
-
-        <button class="border-2 px-2 py-1 rounded-full relative">
-        <a href="cart/cart.html">
-            <i  class="fa-solid fa-bag-shopping"></i>
-            <span id="cart-count" class="absolute bg-[#FADA7A] -top-2 left-4 rounded-full px-2">0</span>
-        </a>
-        </button>
-        <button><i class="fa-solid fa-right-to-bracket"></i></button>
-    </nav>
+    <header class="flex md:px-20 w-full py-2 fixed bg-white z-20">
+        <div class="md:w-[200px] w-[400px] text-center">
+            <h1 class="text-2xl font-bold font-[Pacifico]">Logo</h1>
+        </div>
+        <!--Mobile Menu Button-->
+        <div class="md:hidden w-full justify-end mx-10 flex">
+            <button id="menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <nav id="mobile-nav" class="md:flex md:translate-x-0 translate-x-full ease all duration-300 md:flex-row md:h-full px-2 h-screen flex-col md:bg-transparent bg-[#CA7842] top-0 md:justify-between md:w-full w-1/2 right-0 absolute md:relative items-center">
+            <button id="close-btn" class="w-full text-right md:hidden absolute top-5 right-2 text-white">Close</button>
+            <ul class="md:flex md:flex-row md:px-0 md:py-0 py-5 text-right mx-auto md:justify-evenly md:my-0 mt-10 w-full font-[Quicksand] font-bold">
+                <li class="hover:text-orange-400 "><a href="../index.html#hero">Home</a></li>
+                <li class="hover:text-orange-400 "><a href="../index.html#about">About</a></li> 
+                <li class="hover:text-orange-400 "><a href="./menu/menu.html">Products</a></li>
+                <li class="hover:text-orange-400 "><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="flex md:flex-row flex-col md:items-center justify-evenly">
+                <button class="text-right w-full md:my-0 my-2 md:w-[100px] md:mx-10 py-1 rounded-full relative">
+                    <a class="border-2 px-2 py-1 rounded-full" href="../cart/cart.html">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span id="product-count" class="md:absolute bg-[#FADA7A] -top-2 rounded-full px-2">0</span>
+                    </a>
+                    </button>
+                <button class="text-right"><span class="md:hidden">Login</span><i class="fa-solid fa-right-to-bracket mx-2"></i></button>
+            </div>
+        </nav>
+    </header>
 <!--Hero Section-->
     <section id="hero" class="h-screen flex bg-[#4B352A] flex-col md:flex-row justify-evenly items-center relative px-3 md:px-0">
         <div class="md:w-1/2 text-white md:bg-transparent bg-white/10 backdrop-blur-md py-3 relative md:text-[#F0F2BD] md:py-16 md:px-5 px-3 rounded text-left z-10 md:z-0">
@@ -42,7 +52,7 @@
             
         </div>
 
-        <div class="h-full flex items-end justify-center md:relative absolute">
+        <div class="h-full flex items-end justify-center md:relative top-0 absolute">
             <img class="md:h-[550px] h-[550px]" src="hero-img.png" />
         </div>
     </section>
@@ -81,7 +91,7 @@
             <i class="fa-solid fa-arrow-right ml-3"></i></button>
         </div>
 
-        <div id="products-container" class="flex flex-wrap overflow-hidden gap-5 md:px-10 justify-center items-center">
+        <div id="products-container" class="flex flex-wrap overflow-hidden gap-2 md:px-10 justify-center items-center">
         </div>  
     </section>
 
