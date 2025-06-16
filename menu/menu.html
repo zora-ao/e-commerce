@@ -12,8 +12,8 @@
 </head>
 <body>
     <header class="flex md:px-20 w-full py-2 fixed bg-white border border-black z-20">
-        <div class="md:w-[200px] w-[400px] text-center">
-            <h1 class="text-2xl font-bold font-[Pacifico]">Logo</h1>
+        <div class="w-[100em] md:w-[400px] text-center">
+            <h1 class="text-2xl font-bold font-[Pacifico]">Frosted Cravings</h1>
         </div>
         <!--Mobile Menu Button-->
         <div class="md:hidden w-full justify-end mx-10 flex">
@@ -45,29 +45,47 @@
             
         </div>
         
-        <h1 class="text-4xl px-20 font-[Pacifico]">Menu</h1>
+        <h1 class="text-4xl md:px-20 px-5 font-[Pacifico]">Menu</h1>
+        <p class="text-sm md:px-20 px-5 font-[Quicksand]">Always Choose the best</p>
+        <!--Categories-->
+        <section class="sticky top-0 bg-[#4B352A] md:overflow-hidden overflow-x-scroll text-white z-20">
+            <ul class="py-5 flex md:w-1/2 gap-x-3 items-center mx-auto w-[500px] text-center md:justify-evenly">
+                <li class="hover:bg-white hover:text-[#4B352A] hover:font-bold px-3 border py-2 rounded-full ease-in-out all duration-300"><a href="#new-main-container">New products</a></li>
+                <li class="hover:bg-white hover:text-[#4B352A] hover:font-bold px-3 border py-2 rounded-full ease-in-out all duration-300"><a href="#specialty-main-container">Specialty cakes</a></li>
+                <li class="hover:bg-white hover:text-[#4B352A] hover:font-bold px-3 border py-2 rounded-full ease-in-out all duration-300"><a href="#best-main-container">Best Seller</a></li>
+                <li class="hover:bg-white hover:text-[#4B352A] hover:font-bold px-3 border py-2 rounded-full ease-in-out all duration-300"><a href="#cupcakes-main-container">Cupcakes</a></li>
+            </ul>
+        </section>
         <!--What's new section-->
-        <div class="my-10">
+        <div id="new-main-container" class="my-10 scroll-mt-24">
             <div class="bg-[#4B352A] text-[#F0F2BD] w-3/4 h-[100px] rounded flex items-center mx-auto">
                 <h1 class="md:text-4xl text-2xl px-10 font-[Pacifico]">What's New</h1>
             </div>
-            <div id="new-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap md:justify-evenly justify-center gap-5 md:gap-x-10">
+            <div id="new-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap justify-center md:gap-5 gap-2">
             </div>
         </div>
         <!--Specialty section-->
-        <div class="my-10">
+        <div id="specialty-main-container" class="my-10 scroll-mt-24">
             <div class="bg-[#4B352A] text-[#F0F2BD] w-3/4 h-[100px] rounded flex items-center mx-auto">
                 <h1 class="md:text-4xl text-2xl px-10 font-[Pacifico]">Our Specialty</h1>
             </div>
-            <div id="specialty-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap md:justify-evenly justify-center gap-5 md:gap-x-10">
+            <div id="specialty-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap justify-center md:gap-5 gap-2">
+            </div>
+        </div>
+        <!--Best selling section-->
+        <div id="best-main-container" class="my-10 scroll-mt-24">
+            <div class="bg-[#4B352A] text-[#F0F2BD] w-3/4 h-[100px] rounded flex items-center mx-auto">
+                <h1 class="md:text-4xl text-2xl px-10 font-[Pacifico]">Best Seller</h1>
+            </div>
+            <div id="best-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap justify-center md:gap-5 gap-2">
             </div>
         </div>
         <!--Cupcakes section-->
-        <div class="my-10">
+        <div id="cupcakes-main-container" class="my-10 scroll-mt-24">
             <div class="bg-[#4B352A] text-[#F0F2BD] w-3/4 h-[100px] rounded flex items-center mx-auto">
                 <h1 class="md:text-4xl text-2xl px-10 font-[Pacifico]">Cupcakes</h1>
             </div>
-            <div id="cupcakes-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap md:justify-evenly justify-center gap-5 md:gap-x-10">
+            <div id="cupcakes-container" class="md:w-3/4 w-full mx-auto my-10 flex flex-wrap justify-center md:gap-5 gap-2">
             </div>
         </div>
     </section>

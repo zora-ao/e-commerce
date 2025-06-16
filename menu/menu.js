@@ -8,15 +8,15 @@ export const displayProducts = (containerId, category) => {
     const container = document.getElementById(`${containerId}`);
     const filterProducts = products.filter((product) => product.category === category);
     filterProducts.forEach((item) => {
-        container.innerHTML += `<div class="group md:w-auto w-[130px]">
-        <div class="bg-[#B2CD9C] md:h-[150px] h-[100px] md:w-[180px] overflow-hidden shadow-lg flex flex-col items-center rounded mb-3">
-            <img class="md:w-[130px] md:h-[130px] w-[100px] h-[100px] my-auto group-hover:scale-125 ease duration-300" src="../${item.src}" alt="">
+        container.innerHTML += `<div class="group md:w-[200px] border border-black rounded">
+        <div class="bg-[#B1C29E] md:h-[150px] h-[150px] w-full md:w-full overflow-hidden shadow-lg flex flex-col items-center mb-3">
+            <img class="md:w-[130px] md:h-[130px] w-[150px] h-[120px] my-auto group-hover:scale-125 ease duration-300" src="../${item.src}" alt="">
         </div>
-        <div class="flex flex-col text-center justify-evenly w-full md:h-auto h-[80px]">
+        <div class="flex flex-col text-center justify-evenly w-[150px] md:h-auto h-[80px]">
             <h1>${item.name}</h1>
             <p class="text-pink-600 font-bold">$${item.price}</p>
         </div>
-        <div class="flex w-full justify-evenly mt-2 bg-[#CA7842] rounded text-[#F0F2BD] py-2">
+        <div class="flex w-full justify-evenly mt-2 bg-[#4B352A] text-[#F0F2BD] py-2">
             <button>Buy Now</button>
             <button data-id="${item.id}" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
@@ -26,6 +26,7 @@ export const displayProducts = (containerId, category) => {
 
 displayProducts("new-container", "new");
 displayProducts("specialty-container", "specialty");
+displayProducts("best-container", "best");
 displayProducts("cupcakes-container", "cupcake");
 
 const allProductsCon = document.getElementById("all-products-container");

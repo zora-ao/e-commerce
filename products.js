@@ -49,28 +49,28 @@ const products = [
     category: "specialty"
 },{
     id: 9,
-    name: "Strawberry Toppings",
-    price: 599,
+    name: "Chocolate Toppings",
+    price: 399,
     src: "cakeImg/cake9.png",
-    category: "normal"
+    category: "best"
 },{
     id: 10,
-    name: "Plain Blue Icing",
-    price: 599,
+    name: "Cookie crunch Chocolate",
+    price: 450,
     src: "cakeImg/cake10.png",
-    category: "normal"
+    category: "best"
 },{
     id: 11,
-    name: "Chocolate Cake",
-    price: 599,
+    name: "Peanut Toppings",
+    price: 300,
     src: "cakeImg/cake11.png",
-    category: "normal"
+    category: "best"
 },{
     id: 12,
-    name: "Chocolate Cake",
-    price: 599,
-    src: "cakeImg/cake11.png",
-    category: "normal"
+    name: "Red layered",
+    price: 459,
+    src: "cakeImg/cake12.png",
+    category: "best"
 },{
     id: 13,
     name: "Strawberry Toppings",
