@@ -13,7 +13,7 @@ export const displayProducts = (containerId, category) => {
             <img class="md:w-[130px] md:h-[130px] w-[100px] h-[100px] my-auto group-hover:scale-125 ease duration-300" src="../${item.src}" alt="">
         </div>
         <div class="flex flex-col text-center justify-evenly w-full md:h-auto h-[80px]">
-            <h1 class="border">${item.name}</h1>
+            <h1>${item.name}</h1>
             <p class="text-pink-600 font-bold">$${item.price}</p>
         </div>
         <div class="flex w-full justify-evenly mt-2 bg-[#CA7842] rounded text-[#F0F2BD] py-2">

@@ -13,20 +13,20 @@
 </head>
 <body>
     <header class="flex md:px-20 w-full py-2 fixed bg-white z-20">
-        <div class="md:w-[200px] w-[400px] text-center">
-            <h1 class="text-2xl font-bold font-[Pacifico]">Logo</h1>
+        <div class="md:w-[400px] w-full text-center">
+            <h1 class="text-2xl font-bold font-[Pacifico]">Frosted Cravings</h1>
         </div>
         <!--Mobile Menu Button-->
-        <div class="md:hidden w-full justify-end mx-10 flex">
+        <div class="md:hidden w-10 justify-end mx-10 flex">
             <button id="menu-btn"><i class="fa-solid fa-bars"></i></button>
         </div>
         <nav id="mobile-nav" class="md:flex md:translate-x-0 translate-x-full ease all duration-300 md:flex-row md:h-full px-2 h-screen flex-col md:bg-transparent bg-[#CA7842] top-0 md:justify-between md:w-full w-1/2 right-0 absolute md:relative items-center">
             <button id="close-btn" class="w-full text-right md:hidden absolute top-5 right-2 text-white">Close</button>
             <ul class="md:flex md:flex-row md:px-0 md:py-0 py-5 text-right mx-auto md:justify-evenly md:my-0 mt-10 w-full font-[Quicksand] font-bold">
-                <li class="hover:text-orange-400 "><a href="../index.html#hero">Home</a></li>
-                <li class="hover:text-orange-400 "><a href="../index.html#about">About</a></li> 
-                <li class="hover:text-orange-400 "><a href="./menu/menu.html">Products</a></li>
-                <li class="hover:text-orange-400 "><a href="../index.html#contact">Contact</a></li>
+                <li class="hover:text-orange-400 "><a href="./index.html#hero">Home</a></li>
+                <li class="hover:text-orange-400 "><a href="./index.html#about">About</a></li> 
+                <li class="hover:text-orange-400 "><a href="./index.html#products">Products</a></li>
+                <li class="hover:text-orange-400 "><a href="./index.html#contact">Contact</a></li>
             </ul>
             <div class="flex md:flex-row flex-col md:items-center justify-evenly">
                 <button class="text-right w-full md:my-0 my-2 md:w-[100px] md:mx-10 py-1 rounded-full relative">
@@ -57,7 +57,7 @@
         </div>
     </section>
 <!--Delivery Section-->
-    <section class="md:h-[200px] font-[Quicksand] bg-white md:flex py-4 md:py-0 gap-x-5 justify-evenly items-center px-5 md:px-16">
+    <section class="md:h-[200px] font-[Quicksand] bg-[#CA7842] md:flex py-4 md:py-0 gap-x-5 justify-evenly items-center px-5 md:px-16">
         <div class="flex items-center gap-x-5">
             <i class="fas fa-shipping-fast border p-4 rounded-full bg-[#4B352A] text-[#F0F2BD]"></i>
             <div>
@@ -83,7 +83,7 @@
         </div>
     </section>
 <!--Products Section-->
-    <section class="h-full bg-[#F0F2BD] pt-10 pb-20">
+    <section id="products" class="h-full bg-[#fff] pt-10 pb-20">
         <div class="flex items-center justify-around my-10 px-10">
             <p class="text-4xl font-bold font-[Lobster]">Special Baked Products</p>
             <button class="md:px-5 w-[200px] py-1 border border-2 ease-in-out duration-300 hover:translate-x-[30px] border-black font-[Quicksand]">
@@ -95,52 +95,79 @@
         </div>  
     </section>
 
-    <!--Discount section-->
-    <section id="about" class="items-center relative justify-center flex md:flex-row justify-evenly bg-[#CA7842] md:py-0 py-5">
-        <div class="border md:border-none border-black md:relative absolute top-0 h-full md:w-[300px] w-full">
-            <img class="md:h-[250px] w-[300px] h-full mx-auto rounded" src="discount.png" />
+    <!--About section-->
+    <section id="about" class="md:h-screen h-full bg-[#4B352A] pt-10 flex md:flex-row flex-col justify-evenly px-5 text-white">
+        <div class="md:w-1/2 w-full text-center md:text-left my-auto md:px-10">
+            <h1 class="text-4xl font-bold font-[Quicksand]">About Us</h1>
+            <p class="mt-5 indent-10 text-justify">At Frosted Cravings, we believe every slice of cake tells a story — of celebrations, comfort, and sweet little moments that matter. Founded with love and baked with passion, our cake shop is your go-to destination for handcrafted cakes that don’t just look beautiful, but taste unforgettable.</p>
+            <p class="mt-5 indent-10 text-justify">From classic flavors to custom creations, every cake we make is designed to satisfy your cravings and spark joy. Whether it’s a birthday, a wedding, or just your everyday indulgence, we’re here to make your moments extra special — one layer at a time.</p>
         </div>
-        <div class="gap-y-3 py-10 text-center md:z-0 z-10 md:bg-transparent bg-white/20 backdrop-blur-sm px-3 md:px-0">
-            <h1 class="md:text-5xl text-xl font-bold">What are you waiting for?</h1>
-            <p class="font-[Quicksand] md:text-xl text-sm mb-10 mt-3">Treat your self with our lovely cakes!</p>
-            <button class="bg-white py-2 px-5 font-[Amatic] rounded m-auto text-center">Order Now</button>
+        <div class="md:w-1/2 w-full mt-10 md:my-auto">
+            <img src="about.jpeg" alt="About Us Image" class="w-full h-auto rounded-lg shadow-lg">
         </div>
     </section>
 <!--Footer Section-->
-    <section id="contact" class="bg-[#4B352A] px-5 text-white flex md:flex-row flex-col justify-evenly items-center py-10 md:h-screen">
-        <div class="flex flex-col justify-evenly gap-y-20">
+    <section id="contact" class="bg-[#4B352A] text-white flex md:flex-row flex-col justify-around items-center py-10 md:h-screen">
+        <div class="flex md:p-0 px-5 flex-col justify-evenly gap-y-10">
         <!--Contact-->
         <div>
-            <h1 class="text-4xl font-[Quicksand]">Get in touch.</h1>
-            <div class="flex flex-col mt-5 gap-y-1 text-lg font-[Quicksand]">
-                <p><strong>Phone:</strong> 0917 123 4567</p>
-                <p><strong>Email:</strong> hello@sweetcravings.com</p>
-                <p><strong>Location:</strong> 123 Cupcake Street, Pasig City, Metro Manila</p>
+            <h1 class="md:text-2xl font-[Quicksand]">Get in touch.</h1>
+            <div class="flex md:px-10 flex-col mt-5 gap-y-5 text-lg font-[Quicksand]">
+                <div class="flex items-center gap-x-5">
+                    <i class="fa-solid fa-phone border p-3 rounded-full text-[15px]"></i>
+                    <div class="flex flex-col">
+                        <h1>Phone:</h1>
+                        <span>0917 123 4567</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-5">
+                    <i class="fa-solid fa-envelope border p-3 rounded-full text-[15px]"></i>
+                    <div class="flex flex-col">
+                        <h1>Email:</h1>
+                        <span>hello@sweetcravings.com</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-5">
+                    <i class="fa-solid fa-map-marker-alt border p-3 rounded-full text-[15px]"></i>
+                    <div class="flex flex-col">
+                        <h1>Location:</h1>
+                        <span>123 Cupcake Street, Pasig City, Metro Manila</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <!--Follow Us-->
+        <!--Quick Navigation-->
         <div>
-            <h1 class="md:text-4xl font-[Quicksand]">Follow Us!</h1>
-            <ul class="flex justify-evenly my-5 text-2xl">
-                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
+            <h1 class="md:text-2xl font-[Quicksand]">Quick Navigation</h1>
+            <ul class="mt-5 flex gap-x-5 text-lg font-[Quicksand]">
+                <li><a href="../index.html#hero">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="./menu/menu.html">Products</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <p>Share with us your sweetest experienced!</p>
         </div>
         </div>
-        
 
-    <div class="backdrop-blur-md">
-        <form class="flex flex-col border-2 py-8 px-5 md:w-[400px] w-[300px] h-[450px]" >
-            <h2 class="md:text-4xl font-[Quicksand] text-center mb-4">Say SWEEEETT!!!</h2>
-            <label for="name">Name:</label>
-            <input class="rounded my-2 px-2 text-[#4B352A]" type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input class="rounded my-2 px-2 text-[#4B352A]" type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea class="rounded my-2 px-2 text-[#4B352A]" id="message" name="message" rows="4" required></textarea>
+    <div class="md:w-[400px] w-full md:mt-0 mt-10">
+        <form class="flex flex-col rounded-lg border-2 py-5 px-5">
+            <div class="flex items-center gap-x-5">
+                <h1 class="md:text-xl font-[Quicksand]">Follow Us:</h1>
+                <ul class="flex gap-x-5 justify-center my-5">
+                    <li><a href="#"><i class="fa-brands fa-facebook border p-3 rounded-full md:text-[15px] text-[10px]"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram border p-3 rounded-full md:text-[15px] text-[10px]"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube border p-3 rounded-full md:text-[15px] text-[10px]"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok border p-3 rounded-full md:text-[15px] text-[10px]"></i></a></li>
+                </ul>
+            </div>
+            <div class="flex gap-x-2 font-arial">
+                <input class="rounded-full w-full py-2 my-2 px-3 text-[#4B352A] text-sm" type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                <input class="rounded-full w-full py-2 my-2 px-3 text-[#4B352A] text-sm" type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+            </div>
+            <div class="flex gap-x-2 font-arial">
+                <input class="rounded-full w-full py-2 my-2 px-3 text-[#4B352A] text-sm" type="email" id="email" name="email" placeholder="Email" required>
+                <input class="rounded-full w-full py-2 my-2 px-3 text-[#4B352A] text-sm" type="number" id="phone" name="phone" placeholder="Phone" required>
+            </div>
+            <textarea class="rounded my-2 px-2 pt-2 rounded-lg text-[#4B352A]" id="message" name="message" rows="4" placeholder="Your message" required></textarea>
 
             <button class="mt-4 border rounded py-1 bg-[#F0F2BD] text-black" type="submit">Send</button>
         </form> 
