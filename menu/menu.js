@@ -12,9 +12,9 @@ export const displayProducts = (containerId, category) => {
         <div class="bg-[#B1C29E] md:h-[150px] h-[150px] w-full md:w-full overflow-hidden shadow-lg flex flex-col items-center mb-3">
             <img class="md:w-[130px] md:h-[130px] w-[150px] h-[120px] my-auto group-hover:scale-125 ease duration-300" src="../${item.src}" alt="">
         </div>
-        <div class="flex flex-col text-center justify-evenly w-[150px] md:h-auto h-[80px]">
+        <div class="flex flex-col mx-auto md:w-full text-center w-[150px] md:h-auto h-[80px]">
             <h1>${item.name}</h1>
-            <p class="text-pink-600 font-bold">$${item.price}</p>
+            <p class="text-pink-600 font-bold text-center">$${item.price}</p>
         </div>
         <div class="flex w-full justify-evenly mt-2 bg-[#4B352A] text-[#F0F2BD] py-2">
             <button>Buy Now</button>
@@ -55,3 +55,36 @@ document.addEventListener('click', (event) => {
         mobileNav.classList.add("translate-x-full");
     }
 });
+
+//For changing navigation background per sections
+
+
+const sections = [
+    {id: "new-main-container", button: "new-observe"},
+    {id: "specialty-main-container", button: "special-observe"},
+    {id: "best-main-container", button: "best-observe"},
+    {id: "cupcakes-main-container", button: "cupcakes-observe"}
+];
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const findSection = sections.find((e) => e.id === entry.target.id);
+        const btn = document.getElementById(findSection.button);
+        if(entry.isIntersecting){
+            btn.classList.add("text-[#4B352A]", "bg-white", "font-bold");
+        } else {
+            btn.classList.remove("text-[#4B352A]", "bg-white", "font-bold");
+        }
+    })
+},
+    {
+        threshold: 0.8
+    }
+);
+
+sections.forEach((section) => {
+    const el = document.getElementById(section.id);
+    if(el) observer.observe(el)
+});
+
+

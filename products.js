@@ -95,7 +95,25 @@ const products = [
     price: 129,
     src: "cupcakes/cupcake4.png",
     category: "cupcake"
-},
+},{
+    id: 17,
+    name: "Mixed Top",
+    price: 139,
+    src: "cupcakes/cupcake5.png",
+    category: "cupcake"
+},{
+    id: 18,
+    name: "Blueberry Top",
+    price: 129,
+    src: "cakeImg/cake13.png",
+    category: "new"
+},{
+    id: 19,
+    name: "Full Choco Layered",
+    price: 159,
+    src: "cakeImg/cake14.png",
+    category: "new"
+}
 ];
 
 export default products;
