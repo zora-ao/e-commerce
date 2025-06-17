@@ -14,7 +14,7 @@
 <body>
     <header class="flex md:px-20 w-full py-2 fixed bg-white z-20">
         <div class="md:w-[400px] w-full text-center">
-            <h1 class="text-2xl font-bold font-[Pacifico]">Frosted Cravings</h1>
+            <h1 class="text-2xl text-orange-700 font-bold font-[Pacifico]">Frosted Cravings</h1>
         </div>
         <!--Mobile Menu Button-->
         <div class="md:hidden w-10 justify-end mx-10 flex">
@@ -40,8 +40,8 @@
         </nav>
     </header>
 <!--Hero Section-->
-    <section id="hero" class="h-screen flex bg-[#4B352A] flex-col md:flex-row justify-evenly items-center relative px-3 md:px-0">
-        <div class="md:w-1/2 text-white md:bg-transparent bg-white/10 backdrop-blur-md py-3 relative md:text-[#F0F2BD] md:py-16 md:px-5 px-3 rounded text-left z-10 md:z-0">
+    <section id="hero" class="md:h-screen h-full md:py-0 py-20 flex bg-[#4B352A] flex-col md:flex-row justify-evenly items-center relative px-3 md:px-0">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-1/2 text-white md:bg-transparent bg-white/10 backdrop-blur-md py-3 relative md:text-[#F0F2BD] md:py-16 md:px-5 px-3 rounded text-left z-10 md:z-0">
             <h1 class="md:text-8xl text-4xl font-bold font-[Quicksand]">Baked to Perfection</h1>
             <p class="mb-10">Crafted with love, baked to perfection — indulge in cakes that turn every moment into a celebration.</p>
             <div>
@@ -52,13 +52,13 @@
             
         </div>
 
-        <div class="h-full flex items-end justify-center md:relative top-0 absolute">
-            <img class="md:h-[550px] h-[550px]" src="hero-img.png" />
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box h-full flex items-end justify-center md:relative top-0 absolute">
+            <img class="md:h-[550px] h-full" src="hero-img.png" />
         </div>
     </section>
 <!--Delivery Section-->
-    <section class="md:h-[200px] font-[Quicksand] bg-[#CA7842] md:flex py-4 md:py-0 gap-x-5 justify-evenly items-center px-5 md:px-16">
-        <div class="flex items-center gap-x-5">
+    <section id="delivery" class="md:h-[200px] font-[Quicksand] bg-[#CA7842] md:flex py-4 md:py-0 gap-x-5 justify-evenly items-center px-5 md:px-16">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box flex items-center gap-x-5">
             <i class="fas fa-shipping-fast border p-4 rounded-full bg-[#4B352A] text-white"></i>
             <div>
                 <h1 class="font-bold md:text-3xl my-2">Faster Delivery</h1>
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-x-5">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box flex items-center gap-x-5">
             <i class="fas fa-box border p-4 rounded-full bg-[#4B352A] text-white"></i>
             <div>
                 <h1 class="font-bold md:text-3xl my-2">Safe Packaging</h1>
@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-x-5">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box flex items-center gap-x-5">
             <i class="fas fa-bread-slice border p-4 rounded-full bg-[#4B352A] text-white"></i>
             <div class="text-justify">
                 <h1 class="font-bold md:text-3xl my-2">Freshly Baked</h1>
@@ -84,7 +84,7 @@
     </section>
 <!--Products Section-->
     <section id="products" class="h-full bg-[#fff] pt-10 pb-20">
-        <div class="flex items-center justify-around my-10 px-10">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box flex items-center justify-around my-10 px-10">
             <p class="text-4xl font-bold font-[Lobster]">Special Baked Products</p>
             <button class="md:px-5 w-[200px] py-1 border border-2 ease-in-out duration-300 hover:translate-x-[30px] border-black font-[Quicksand]">
                 <a href="menu/menu.html">View All</a>
@@ -96,22 +96,21 @@
     </section>
 
     <!--About section-->
-    <section id="about" class="md:h-screen h-full bg-[#4B352A] pt-10 flex md:flex-row flex-col justify-evenly px-5 text-white">
-        <div class="md:w-1/2 w-full text-center md:text-left my-auto md:px-10">
+    <section id="about" class="md:h-screen py-10 scroll-mt-5 h-full bg-[#4B352A] flex md:flex-row flex-col justify-evenly px-5 text-white">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-1/2 w-full text-center md:text-left my-auto md:px-10">
             <h1 class="text-4xl font-bold font-[Quicksand]">About Us</h1>
             <p class="mt-5 indent-10 text-justify">At Frosted Cravings, we believe every slice of cake tells a story — of celebrations, comfort, and sweet little moments that matter. Founded with love and baked with passion, our cake shop is your go-to destination for handcrafted cakes that don’t just look beautiful, but taste unforgettable.</p>
             <p class="mt-5 indent-10 text-justify">From classic flavors to custom creations, every cake we make is designed to satisfy your cravings and spark joy. Whether it’s a birthday, a wedding, or just your everyday indulgence, we’re here to make your moments extra special — one layer at a time.</p>
         </div>
-        <div class="md:w-1/2 w-full mt-10 md:my-auto">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-1/2 w-full mt-10 md:my-auto">
             <img src="about.jpeg" alt="About Us Image" class="w-full h-auto rounded-lg shadow-lg">
         </div>
     </section>
-    <hr class="bg-white border border-white w-full tet-white">
 <!--Footer Section-->
     <section id="contact" class="bg-[#4B352A] text-white flex md:flex-row flex-col justify-around items-center py-10 md:h-screen">
-        <div class="flex md:p-0 px-5 flex-col justify-evenly gap-y-10">
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box flex md:p-0 flex-col justify-evenly gap-y-10">
         <!--Contact-->
-        <div>
+        <div class="px-5">
             <h1 class="md:text-2xl font-[Quicksand]">Get in touch.</h1>
             <div class="flex md:px-10 flex-col mt-5 gap-y-5 text-lg font-[Quicksand]">
                 <div class="flex items-center gap-x-5">
@@ -138,19 +137,19 @@
             </div>
         </div>
         <!--Quick Navigation-->
-        <div>
+        <div class="px-5">
             <h1 class="md:text-2xl font-[Quicksand]">Quick Navigation</h1>
-            <ul class="mt-5 flex gap-x-5 text-lg font-[Quicksand]">
-                <li><a href="../index.html#hero">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
+            <ul class="mt-5 flex gap-x-5 md:text-lg text-sm font-[Quicksand]">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="./menu/menu.html">Products</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
         </div>
 
-    <div class="md:w-[400px] w-full md:mt-0 mt-10">
-        <form class="flex flex-col rounded-lg border-2 py-5 px-5">
+    <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-[400px] w-full md:mt-0 mt-10 px-2">
+        <form class="flex flex-col rounded-lg border-2 py-5 md:px-5 px-2">
             <div class="flex items-center gap-x-5">
                 <h1 class="md:text-xl font-[Quicksand]">Follow Us:</h1>
                 <ul class="flex gap-x-5 justify-center my-5">
