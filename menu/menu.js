@@ -53,7 +53,7 @@ const removeOrder = () => {
 
 const displayOrder = (order) => {
     orderContainer.innerHTML = 
-    `<div id="order-container" class="md:w-[300px] w-[250px] md:top-20 top-28 md:p-5 p-3 rounded bg-[#F0F2BD] border border-black fixed z-30" >
+    `<div id="order-container" class="md:w-[300px] w-[250px] md:top-20 top-1/3 md:p-5 p-3 rounded bg-[#F0F2BD] border border-black fixed z-30" >
     <button id="order-close" class="absolute">X</button>
     <h1 id="order-name" class="text-center text-xl md:text-2xl mb-2">${order.name}</h1>
     <img id="order-img" class="w-[150px] h-[150px] mx-auto" src="/${order.src}" />
