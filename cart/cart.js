@@ -11,12 +11,12 @@ export let cart = JSON.parse(localStorage.getItem("products")) || [];
 
 if (!Array.isArray(cart)) cart = [];
 
-export const addToCart = (item, notification) => {
+export const addToCart = (item, notification, orderCount) => {
     const find = cart.find((i) => i.id === item.id);
     const div = document.createElement("div");
     div.className = "bg-[#CA7842] rounded-lg w-full text-center my-2 py-5";
     if(find){
-        find.quantity += 1;
+        find.quantity += orderCount;
         div.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.`;
         notification.appendChild(div);
     } else {
@@ -130,15 +130,24 @@ const deleteItem = (id) => {
     console.log("working")
 };
 
-let taxAmount = 0.10; 
-let shippingCost = 5;
-
-
 const updateOrderSummary = () => {
-    mobileSubTotal.innerHTML = cart.length !== 0 ? `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}` : `$0.00`;
-    subTotal.innerHTML = cart.length !== 0 ? `$${cart.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}` : `$0.00`;
-}
+    let calculateSubTotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    let shippingCost = 5;
+    let taxAmount = 0.08; 
+    let discountAmount = 0.10;
+
+    const calculateDiscount = calculateSubTotal * discountAmount;
+    const discountTotal = calculateSubTotal - calculateDiscount;
+    const totalTax = discountTotal * taxAmount;
+    const totalAmount = discountTotal + totalTax + shippingCost;
 
 
+    mobileSubTotal.innerHTML = cart.length !== 0 ? `$${calculateSubTotal.toFixed(2)}` : `$0.00`;
+    subTotal.innerHTML = cart.length !== 0 ? `${calculateSubTotal.toFixed(2)}` : `$0.00`;
+    shipping.innerHTML = `$${shippingCost}`;
+    tax.innerHTML = `${Math.floor(taxAmount * 100)}%`;
+    discount.innerHTML = `${Math.floor(discountAmount * 100)}%`;
+    totalCost.innerHTML = cart.length !== 0 ? totalAmount.toFixed(2) : `$0.00`;
+};
 
 displayCartItems();

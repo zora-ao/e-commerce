@@ -17,7 +17,7 @@ export const displayProducts = (containerId, category) => {
             <p class="text-pink-600 font-bold text-center">$${item.price}</p>
         </div>
         <div class="flex w-full justify-evenly mt-2 bg-[#4B352A] text-[#F0F2BD] py-2">
-            <button>Buy Now</button>
+            <button id="order-btn">Order Now</button>
             <button data-id="${item.id}" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
         </div>`
@@ -31,13 +31,76 @@ displayProducts("cupcakes-container", "cupcake");
 
 const allProductsCon = document.getElementById("all-products-container");
 const addNotification = document.getElementById("add-notif");
+const orderContainer = document.getElementById("order-container");
+
+const handleOrder = (order, orderCount) => {
+    const orderBtn = document.getElementById("order-btn");
+
+    orderBtn.addEventListener('click', () => {
+        orderContainer.innerHTML = '';
+        addToCart(order, addNotification, orderCount);
+        productCount.innerHTML = cart.length;
+    });
+};
+
+const removeOrder = () => {
+    const removeBtn = document.getElementById('order-close');
+
+    removeBtn.addEventListener('click', () => {
+        orderContainer.innerHTML = '';
+    });
+};
+
+const displayOrder = (order) => {
+    orderContainer.innerHTML = 
+    `<div id="order-container" class="md:w-[300px] w-[250px] md:top-20 top-28 md:p-5 p-3 rounded bg-[#F0F2BD] border border-black fixed z-30" >
+    <button id="order-close" class="absolute">X</button>
+    <h1 id="order-name" class="text-center text-xl md:text-2xl mb-2">${order.name}</h1>
+    <img id="order-img" class="w-[150px] h-[150px] mx-auto" src="/${order.src}" />
+    <p class="text-center">Price: <span id="order-price">$${order.price}</span></p>
+    <div class="flex gap-x-2 mt-2 justify-center">
+        <h2>Quantity:</h2>
+        <span id="order-add" class="cursor-pointer">+</span>
+        <input id="order-input" value=1 class="rounded w-[60px] border border-black text-center" type="number" />
+        <span id="order-sub" class="cursor-pointer">-</span>
+    </div>
+    <button id="order-btn" class="border w-full py-2 rounded mt-5 bg-[#4B352A] text-white">Add to Cart</button>
+    </div>`
+    //closing the order
+    removeOrder();
+    //add and subtracting order
+    const incOrder = document.getElementById("order-add");
+    const orderInput = document.getElementById("order-input");
+    const subOrder = document.getElementById("order-sub");
+
+    let orderCount = Number(orderInput.value);
+
+    incOrder.addEventListener('click', () => {
+        orderCount++;
+        orderInput.value = orderCount;
+        handleOrder(order, orderCount);
+    });
+
+    subOrder.addEventListener('click', () => {
+        if(orderCount > 1){
+            orderCount--;
+            orderInput.value = orderCount;
+            handleOrder(order, orderCount);
+        }
+    });
+
+    handleOrder(order, orderCount);
+}
+
+
+
 allProductsCon.addEventListener('click', (e) => {
     const btn = e.target.closest(".add-to-cart"); 
     if(btn){
         const id = parseInt(btn.getAttribute("data-id"));
         const findProduct = products.find((product) => product.id === id);
-        addToCart(findProduct, addNotification);
-        productCount.innerHTML = cart.length;
+        console.log(findProduct);
+        displayOrder(findProduct);
     };
 });
 
