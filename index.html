@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Great+Vibes&family=Lobster&family=Pacifico&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -23,7 +24,7 @@
         <nav id="mobile-nav" class="md:flex md:translate-x-0 translate-x-full ease all duration-300 md:flex-row md:h-full px-2 h-screen flex-col md:bg-transparent bg-[#CA7842] top-0 md:justify-between md:w-full w-1/2 right-0 absolute md:relative items-center">
             <button id="close-btn" class="w-full text-right md:hidden absolute top-5 right-2 text-white">Close</button>
             <ul class="md:flex md:flex-row md:px-0 md:py-0 py-5 text-right mx-auto md:justify-evenly md:my-0 mt-10 w-full font-[Quicksand] font-bold">
-                <li class="hover:text-orange-400 "><a href="#home">Home</a></li>
+                <li class="hover:text-orange-400 "><a href="#hero">Home</a></li>
                 <li class="hover:text-orange-400 "><a href="#about">About</a></li> 
                 <li class="hover:text-orange-400 "><a href="#products">Products</a></li>
                 <li class="hover:text-orange-400 "><a href="#contact">Contact</a></li>
@@ -41,18 +42,18 @@
     </header>
 <!--Hero Section-->
     <section id="hero" class="md:h-screen h-full md:py-0 py-20 flex bg-[#4B352A] flex-col md:flex-row justify-evenly items-center relative px-3 md:px-0">
-        <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-1/2 text-white md:bg-transparent bg-white/10 backdrop-blur-md py-3 relative md:text-[#F0F2BD] md:py-16 md:px-5 px-3 rounded text-left z-10 md:z-0">
-            <h1 class="md:text-8xl text-4xl font-bold font-[Quicksand]">Baked to Perfection</h1>
+        <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-1/2 text-white md:bg-transparent py-3 relative md:text-[#F0F2BD] md:py-16 md:px-5 px-3 rounded text-left z-10 md:z-0">
+            <h1 class="md:text-8xl text-4xl font-bold font-[Oswald]">Baked to <span class="font-[Pacifico] text-red-500">Perfection</span></h1>
             <p class="mb-10">Crafted with love, baked to perfection — indulge in cakes that turn every moment into a celebration.</p>
             <div>
-                <button class="border text-xl md:px-5 px-2 py-1 font-[Quicksand]">Contact Us</button>
+                <button class="border text-xl md:px-5 px-2 py-1 font-[Quicksand]"><a href="#contact">Contact Us</a></button>
                 <button class="border text-xl md:px-5 px-2 py-1 font-[Quicksand] md:mx-5 cursor-pointer">
                     <a href="menu/menu.html">Shop Now<i class="fa-solid fa-arrow-right md:ml-3 ml-2"></i></a></button>
             </div>
             
         </div>
 
-        <div class="opacity-0 translate-y-10 transition-all duration-700 box h-full flex items-end justify-center md:relative top-0 absolute">
+        <div class="opacity-0 hidden md:flex translate-y-10 transition-all duration-700 box h-full flex items-end justify-center md:relative top-0 absolute">
             <img class="md:h-[550px] h-full" src="hero-img.png" />
         </div>
     </section>

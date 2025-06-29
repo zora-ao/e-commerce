@@ -17,8 +17,7 @@ export const displayProducts = (containerId, category) => {
             <p class="text-pink-600 font-bold text-center">$${item.price}</p>
         </div>
         <div class="flex w-full justify-evenly mt-2 bg-[#4B352A] text-[#F0F2BD] py-2">
-            <button id="order-btn">Order Now</button>
-            <button data-id="${item.id}" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+            <button data-id="${item.id}" class="add-to-cart">Order Now</button>
         </div>
         </div>`
 });

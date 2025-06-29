@@ -13,19 +13,15 @@ if (!Array.isArray(cart)) cart = [];
 
 export const addToCart = (item, notification, orderCount) => {
     const find = cart.find((i) => i.id === item.id);
-    const div = document.createElement("div");
-    div.className = "bg-[#CA7842] rounded-lg w-full text-center my-2 py-5";
     if(find){
         find.quantity += orderCount;
-        div.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.`;
-        notification.appendChild(div);
+        notification.innerHTML = `<h1 class="bg-[#CA7842] rounded-lg w-full text-center my-2 py-5"><i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.</h1>`;
     } else {
         cart.push({...item, quantity: 1});
-        div.innerHTML = `<i class="fa-solid fa-check px-5"></i> Item added to cart.`;
-        notification.appendChild(div);
+        notification.innerHTML = `<h1 class="bg-[#CA7842] rounded-lg w-full text-center my-2 py-5"><i class="fa-solid fa-check px-5"></i> Item added to cart.</h1>`;
     }
     setTimeout(() => {
-        notification.removeChild(div);
+        notification.innerHTML = '';
     }, 1000);
     localStorage.setItem("products", JSON.stringify(cart));
 };
