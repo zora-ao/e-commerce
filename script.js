@@ -35,6 +35,9 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+
+
 //Observer animation
 
 const observer = new IntersectionObserver(entries => {
@@ -54,4 +57,19 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll(".box").forEach(e => {
     observer.observe(e)
-})
+});
+
+//promotion image
+const promotionContainer = document.getElementById('promotion-img-container');
+const slideImg = document.querySelectorAll(".promotion-img");
+
+let index = 0;
+
+
+const handleSlide = () => {
+    promotionContainer.style.transform = `translateX(-${index * 100}%)`;
+    
+    index = (index + 1) % slideImg.length;
+}
+
+setInterval(handleSlide, 2500);
