@@ -32,15 +32,7 @@ const allProductsCon = document.getElementById("all-products-container");
 const addNotification = document.getElementById("add-notif");
 const orderContainer = document.getElementById("order-container");
 
-const handleOrder = (order, orderCount) => {
-    const orderBtn = document.getElementById("order-btn");
 
-    orderBtn.addEventListener('click', () => {
-        orderContainer.innerHTML = '';
-        addToCart(order, addNotification, orderCount);
-        productCount.innerHTML = cart.length;
-    });
-};
 
 const removeOrder = () => {
     const removeBtn = document.getElementById('order-close');
@@ -51,6 +43,7 @@ const removeOrder = () => {
 };
 
 const displayOrder = (order) => {
+    
     orderContainer.innerHTML = 
     `<div id="order-container" class="md:w-[300px] w-[250px] md:top-20 top-1/3 md:p-5 p-3 rounded bg-[#F0F2BD] border border-black fixed z-30" >
     <button id="order-close" class="absolute">X</button>
@@ -77,18 +70,23 @@ const displayOrder = (order) => {
     incOrder.addEventListener('click', () => {
         orderCount++;
         orderInput.value = orderCount;
-        handleOrder(order, orderCount);
     });
 
     subOrder.addEventListener('click', () => {
         if(orderCount > 1){
             orderCount--;
             orderInput.value = orderCount;
-            handleOrder(order, orderCount);
         }
     });
+    //add to cart
+    const orderBtn = document.getElementById("order-btn");
 
-    handleOrder(order, orderCount);
+    orderBtn.addEventListener('click', () => {
+        orderCount = Number(orderInput.value);
+        orderContainer.innerHTML = '';
+        addToCart(order, addNotification, orderCount);
+        productCount.innerHTML = cart.length;
+    });
 }
 
 
@@ -98,7 +96,6 @@ allProductsCon.addEventListener('click', (e) => {
     if(btn){
         const id = parseInt(btn.getAttribute("data-id"));
         const findProduct = products.find((product) => product.id === id);
-        console.log(findProduct);
         displayOrder(findProduct);
     };
 });

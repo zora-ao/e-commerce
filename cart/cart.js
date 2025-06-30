@@ -12,18 +12,20 @@ export let cart = JSON.parse(localStorage.getItem("products")) || [];
 if (!Array.isArray(cart)) cart = [];
 
 export const addToCart = (item, notification, orderCount) => {
+    
     const find = cart.find((i) => i.id === item.id);
     if(find){
         find.quantity += orderCount;
+        localStorage.setItem("products", JSON.stringify(cart));
         notification.innerHTML = `<h1 class="bg-[#CA7842] rounded-lg w-full text-center my-2 py-5"><i class="fa-solid fa-check px-5"></i> Item already in cart. Quantity increased.</h1>`;
     } else {
-        cart.push({...item, quantity: 1});
+        cart.push({...item, quantity: orderCount});
+        localStorage.setItem("products", JSON.stringify(cart));
         notification.innerHTML = `<h1 class="bg-[#CA7842] rounded-lg w-full text-center my-2 py-5"><i class="fa-solid fa-check px-5"></i> Item added to cart.</h1>`;
     }
     setTimeout(() => {
         notification.innerHTML = '';
     }, 1000);
-    localStorage.setItem("products", JSON.stringify(cart));
 };
 
 export const displayCartItems = () => {
@@ -37,7 +39,7 @@ export const displayCartItems = () => {
     cart.forEach((product) => {
         totalItems.innerHTML = `${cart.length} Items`;
         ordersContainer.innerHTML += 
-        `<div class="flex justify-around items-center my-5">
+        `<div class="flex md:justify-around justify-between px-2 items-center my-5">
             <div class="flex md:flex-row items-center md:w-[300px]">
                 <img class="md:w-[100px] border border-black w-[50px] h-[50px] md:h-[120px]" src="../${product.src}" alt="${product.name}">
                 <div class="mx-2">
