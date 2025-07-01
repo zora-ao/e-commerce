@@ -9,7 +9,7 @@ filterNewProducts.forEach(product => {
     productsContainer.innerHTML += `
     <div class="opacity-0 translate-y-10 transition-all duration-700 box md:w-[250px] w-[170px] mx-auto justify-center border border-black shadow-lg rounded group">
     <div class="md:h-full overflow-hidden w-full h-full bg-[#B1C29E] flex flex-col items-center md:mb-3">
-        <img src="${product.src}" class="md:h-[200px] md:w-[200px] h-[150px] w-[100px] py-5 ease duration-300 group-hover:scale-125" />
+        <img loading="lazy" src="${product.src}" class="md:h-[200px] md:w-[200px] h-[150px] w-[100px] py-5 ease duration-300 group-hover:scale-125" />
     </div>    
         <div class="flex md:flex-row flex-col text-center justify-evenly md:h-full h-[100px] w-full my-3">
             <h1>${product.name}</h1>
