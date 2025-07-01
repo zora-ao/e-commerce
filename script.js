@@ -71,5 +71,5 @@ const handleSlide = () => {
     
     index = (index + 1) % slideImg.length;
 }
-
+handleSlide();
 setInterval(handleSlide, 2500);
